@@ -1,0 +1,6 @@
+#stressコマンドのインストール
+sudo yum install stress
+
+
+#メモリ負荷をかけるコマンド
+stress --vm 1 --vm-bytes 300M --vm-keep -t 60

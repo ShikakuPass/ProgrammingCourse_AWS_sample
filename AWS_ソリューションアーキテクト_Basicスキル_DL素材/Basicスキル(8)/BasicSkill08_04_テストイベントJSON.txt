@@ -1,0 +1,6 @@
+{
+  "queryStringParameters": {
+    "operation": "GET",
+    "email": "sfujiwara@example.com"
+  }
+}

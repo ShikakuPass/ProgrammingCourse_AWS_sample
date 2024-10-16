@@ -1,0 +1,75 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowVariousInfo",
+            "Effect": "Allow",
+            "Action": [
+                "iam:GetAccountPasswordPolicy",
+                "iam:GetAccountSummary",
+                "iam:ListVirtualMFADevices",
+                "iam:ChangePassword",
+                "iam:GetUser",
+                "iam:CreateLoginProfile",
+                "iam:DeleteLoginProfile",
+                "iam:GetLoginProfile",
+                "iam:UpdateLoginProfile",
+                "iam:CreateAccessKey",
+                "iam:DeleteAccessKey",
+                "iam:ListAccessKeys",
+                "iam:UpdateAccessKey",
+                "iam:DeleteSigningCertificate",
+                "iam:ListSigningCertificates",
+                "iam:UpdateSigningCertificate",
+                "iam:UploadSigningCertificate",
+                "iam:DeleteSSHPublicKey",
+                "iam:GetSSHPublicKey",
+                "iam:ListSSHPublicKeys",
+                "iam:UpdateSSHPublicKey",
+                "iam:UploadSSHPublicKey",
+                "iam:CreateServiceSpecificCredential",
+                "iam:DeleteServiceSpecificCredential",
+                "iam:ListServiceSpecificCredentials",
+                "iam:ResetServiceSpecificCredential",
+                "iam:UpdateServiceSpecificCredential",
+                "iam:CreateVirtualMFADevice",
+                "iam:DeleteVirtualMFADevice",
+                "iam:DeactivateMFADevice",
+                "iam:EnableMFADevice",
+                "iam:ListMFADevices",
+                "iam:ResyncMFADevice"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "DenyExceptListedIfNoMFA",
+            "Effect": "Deny",
+            "NotAction": [
+                "iam:CreateVirtualMFADevice",
+                "iam:EnableMFADevice",
+                "iam:ChangePassword",
+                "iam:GetUser",
+                "iam:CreateLoginProfile",
+                "iam:DeleteLoginProfile",
+                "iam:GetLoginProfile",
+                "iam:UpdateLoginProfile",
+                "iam:ListMFADevices",
+                "iam:ListVirtualMFADevices",
+                "iam:ResyncMFADevice",
+                "iam:DeleteVirtualMFADevice",
+                "sts:GetSessionToken"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "BoolIfExists": {
+                    "aws:MultiFactorAuthPresent": "false"
+                },
+                "StringLike": {
+                    "aws:PrincipalArn": [
+                        "arn:aws:iam::*:user/*"
+                    ]
+                }
+            }
+        }
+    ]
+}
