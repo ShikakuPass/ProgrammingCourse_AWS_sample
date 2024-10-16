@@ -1,3 +1,0 @@
-aws dynamodb put-item --table-name shikakupass-users --item '{"email": {"S":"sfujiwara@example.com"},"FirstName": {"S":"Satoru"},"LastName": {"S":"Fujiwara"}}'
-
-aws dynamodb put-item --table-name shikakupass-users --item '{"email": {"S":"knakano@example.com"},"FirstName": {"S":"Koji"},"LastName": {"S":"Nakano"}}'
