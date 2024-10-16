@@ -1,0 +1,1 @@
+curl -i --header "x-api-key:<APIキーの値>" "https://<API GatewayのID>.execute-api.ap-northeast-1.amazonaws.com/Dev/shikakupass-api?operation=GET&email=sfujiwara%40example.com"
