@@ -1,1 +1,2 @@
-# ProgrammingCourse_AWS_sample
+ここで閲覧・ダウンロードできるファイル・コードは、[Shikaku Pass](https://shikakupass.com/)の「プログラミング講座」の学習を補助するものです。
+ほかの目的での使用には適していませんのでご注意ください。
