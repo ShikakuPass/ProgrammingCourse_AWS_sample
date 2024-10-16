@@ -1,0 +1,2 @@
+#CPUに負荷をかけるコマンド
+timeout 60s yes > /dev/null
