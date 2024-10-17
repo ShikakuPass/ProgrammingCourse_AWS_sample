@@ -1,7 +1,0 @@
-{
-  "Records": [
-    {
-      "body": "{\"operation\":\"POST\",\"Email\":\"test@example.com\",\"FirstName\":\"Test\",\"LastName\":\"Taro\"}"
-    }
-  ]
-}
